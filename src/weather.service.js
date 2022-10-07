@@ -1,5 +1,5 @@
 // 'use strict';
-const BASE_URL = "https://api.openweathermap.org/data/2.5/onecall";
+const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 const API_KEY = "5585501052f6757f34b42a64bee1718d";
 const DEFAULT_OPTIONS = {
   coord: {
@@ -26,6 +26,7 @@ const cache = new Map();
  * @see https://openweathermap.org/api/one-call-api#data
  */
 export async function getForecast(options) {
+  console.log("Here");
   const { coord, units } = Object.assign({}, DEFAULT_OPTIONS, options);
   const cacheItem = cache.get(coord);
   if (cacheItem && !isExpired(cacheItem.current.dt)) {
@@ -55,6 +56,7 @@ export async function getForecast(options) {
  * @param {APIOptions} options
  */
 async function fetchForecast({ coord: { lat, lon }, units }) {
+  console.log("fetch");
   const url = `${BASE_URL}?lat=${lat}&lon=${lon}&units=${units}&appid=${API_KEY}`;
   const response = await fetch(url);
   if (!response.ok) throw new Error(response.statusText);
