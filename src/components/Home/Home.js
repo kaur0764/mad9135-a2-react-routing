@@ -1,7 +1,7 @@
 import React from "react";
 import "./home.css";
 
-function Home({ forecast }) {
+function Home({ forecast, setLoaded }) {
   if (!forecast) {
     return (
       <p>
@@ -11,9 +11,6 @@ function Home({ forecast }) {
     );
   } else {
     console.log(forecast);
-    // Home page will display today’s current weather,
-    //  including Temp, real feel, sunrise, sunset, etc.
-
     function convertTime(timestamp) {
       let time = new Date(timestamp * 1000);
       let hours = time.getHours();
@@ -21,7 +18,6 @@ function Home({ forecast }) {
         hours = hours - 12;
       }
       let minutes = "0" + time.getMinutes();
-      console.log(minutes.substr(-2));
       return { hours, minutes };
     }
 
@@ -29,7 +25,7 @@ function Home({ forecast }) {
     let sunsetTime = convertTime(forecast.sys.sunset);
 
     convertTime(1665054440);
-    console.log(new Date(1665054440 * 1000).toLocaleString("en-US"));
+    setTimeout(setLoaded, 800, true);
     return (
       <>
         <p className="temp">{`${forecast.main.temp}\u00B0`}</p>
@@ -40,8 +36,8 @@ function Home({ forecast }) {
           Wind {forecast.wind.speed} Humidity {forecast.main.humidity}
         </p>
         <p>
-          Sunrise {sunriseTime.hours}:{sunriseTime.minutes} am Sunset{" "}
-          {sunsetTime.hours}:{sunsetTime.minutes} pm
+          Sunrise {sunriseTime.hours}:{sunriseTime.minutes.slice(-2)} am Sunset{" "}
+          {sunsetTime.hours}:{sunsetTime.minutes.slice(-2)} pm
         </p>
       </>
     );
