@@ -1,5 +1,5 @@
 // 'use strict';
-const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
+const BASE_URL = "https://api.openweathermap.org/data/2.5/onecall";
 const API_KEY = "5585501052f6757f34b42a64bee1718d";
 const DEFAULT_OPTIONS = {
   coord: {

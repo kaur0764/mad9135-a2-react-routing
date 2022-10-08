@@ -21,19 +21,19 @@ function Home({ forecast, setLoaded }) {
       return { hours, minutes };
     }
 
-    let sunriseTime = convertTime(forecast.sys.sunrise);
-    let sunsetTime = convertTime(forecast.sys.sunset);
+    let sunriseTime = convertTime(forecast.current.sunrise);
+    let sunsetTime = convertTime(forecast.current.sunset);
 
     convertTime(1665054440);
     setTimeout(setLoaded, 800, true);
     return (
       <>
-        <p className="temp">{`${forecast.main.temp}\u00B0`}</p>
+        <p className="temp">{`${forecast.current.temp}\u00B0`}</p>
+        <p>{`feels like ${forecast.current.feels_like}\u00B0`}</p>
+        <p> {forecast.current.weather[0].main}</p>
         <p>
-          {`\u2191${forecast.main.temp_max}\u00B0 \u2193${forecast.main.temp_min}\u00B0 feels like ${forecast.main.feels_like}\u00B0`}
-        </p>
-        <p>
-          Wind {forecast.wind.speed} Humidity {forecast.main.humidity}
+          Wind {forecast.current.wind_speed}m/s Humidity{" "}
+          {forecast.current.humidity}%
         </p>
         <p>
           Sunrise {sunriseTime.hours}:{sunriseTime.minutes.slice(-2)} am Sunset{" "}
