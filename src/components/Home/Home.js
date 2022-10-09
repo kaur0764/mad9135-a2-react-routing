@@ -12,7 +12,6 @@ function Home({ forecast, setLoaded, convertTime }) {
   } else {
     let sunriseTime = convertTime(forecast.current.sunrise);
     let sunsetTime = convertTime(forecast.current.sunset);
-
     convertTime(1665054440);
     setTimeout(setLoaded, 800, true);
     return (
