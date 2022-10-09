@@ -1,14 +1,23 @@
 import React from "react";
 import "./list.css";
 
-function List({ hourForecast, convertTime }) {
-  let time = convertTime(hourForecast.dt);
-  const formatedDate = new Date(hourForecast.dt * 1000);
+function List({ forecast, convertTime }) {
+  let time = convertTime(forecast.dt);
+  const formatedDate = new Date(forecast.dt * 1000);
   let timeSuffix = "am";
   if (time.hours > 12) {
     time.hours = time.hours - 12;
     timeSuffix = "pm";
   }
+  let temp = [];
+  if (typeof forecast.temp == "number") {
+    temp[0] = `${forecast.temp}\u00B0`;
+    temp[1] = `feels like ${forecast.feels_like}\u00B0`;
+  } else {
+    temp[0] = `Day ${forecast.temp.day}\u00B0 feels like ${forecast.feels_like.day}\u00B0`;
+    temp[1] = `Night ${forecast.temp.night}\u00B0 feels like ${forecast.feels_like.night}\u00B0`;
+  }
+
   return (
     <li>
       <p>
@@ -17,11 +26,9 @@ function List({ hourForecast, convertTime }) {
       </p>
       <p>{time.date}</p>
       <p>{time.day}</p>
-      <p>
-        feels like {hourForecast.feels_like}
-        {`\u00B0`}
-      </p>
-      <p>{hourForecast.weather[0].description}</p>
+      <p>{temp[0]}</p>
+      <p>{temp[1]}</p>
+      <p>{forecast.weather[0].description}</p>
     </li>
   );
 }

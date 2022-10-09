@@ -1,16 +1,17 @@
 import React from "react";
 import List from "../List/List";
 
-function Hourly({ forecast, convertTime, setLoaded }) {
+function Daily({ forecast, convertTime, setLoaded }) {
   if (forecast) {
     setTimeout(setLoaded, 800, true);
-    let hourlyForecast = [];
+    let dailyForecast = [];
     for (let i = 1; i <= 6; i++) {
-      hourlyForecast.push(forecast.hourly[i]);
+      dailyForecast.push(forecast.daily[i]);
     }
+    console.log(dailyForecast);
     return (
-      <ul className="hourlyList">
-        {hourlyForecast.map((forecast) => (
+      <ul className="dailyList">
+        {dailyForecast.map((forecast) => (
           <List
             key={forecast.dt}
             forecast={forecast}
@@ -21,4 +22,4 @@ function Hourly({ forecast, convertTime, setLoaded }) {
     );
   }
 }
-export default Hourly;
+export default Daily;

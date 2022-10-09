@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
-import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
 import { getForecast } from "./weather.service";
+import "./App.css";
 import Loader from "./components/Loader/Loader";
-import Hourly from "./components/Hourly/Hourly";
+import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
+import Home from "./components/Home/Home";
+import Hourly from "./components/Hourly/Hourly";
+import Daily from "./components/Daily/Daily";
 import FourOhFour from "./components/FourOhFour/FourOhFour";
 
 function App() {
@@ -83,6 +84,16 @@ function App() {
           path="/hourly"
           element={
             <Hourly
+              forecast={forecast}
+              convertTime={convertTime}
+              setLoaded={setLoaded}
+            />
+          }
+        />
+        <Route
+          path="/daily"
+          element={
+            <Daily
               forecast={forecast}
               convertTime={convertTime}
               setLoaded={setLoaded}

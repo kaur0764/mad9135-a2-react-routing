@@ -19,6 +19,13 @@ function NavBar() {
       >
         Hourly
       </NavLink>
+      <NavLink
+        to="/daily"
+        className="navlink"
+        style={({ isActive }) => ({ color: isActive ? "purple" : "black" })}
+      >
+        Daily
+      </NavLink>
     </div>
   );
 }
