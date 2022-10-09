@@ -1,0 +1,37 @@
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  gap: 1rem;
+}
+
+.hourlyList li{
+  padding-top: 0.5rem;
+  margin: 0 auto;
+  border: 3px solid #000;
+  border-radius: 10px;
+  min-width: 21rem;
+  max-width: 42rem;
+  margin: 0;
+  flex-grow: 1;
+} 
+
+.hourlyList li p:first-child{
+  font-weight: bold;
+}
+
+.hourlyList p{
+  margin: 0 auto;
+  padding: 0 1rem;
+  margin: 1rem 0;
+}
+
+@media all and (min-width: 450px) {
+  .hourlyList li {
+  min-width: 25rem;
+  }
+}

@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import { getForecast } from "./weather.service";
 import Loader from "./components/Loader/Loader";
+import Hourly from "./components/Hourly/Hourly";
 
 function App() {
   const [lon, setLon] = useState("");
@@ -50,10 +51,28 @@ function App() {
       };
     });
 
+  function convertTime(timestamp) {
+    let time = new Date(timestamp * 1000);
+    let hours = time.getHours();
+    if (hours > 12) {
+      hours = hours - 12;
+    }
+    let minutes = "0" + time.getMinutes();
+    let timeString = time.toDateString();
+    let date = timeString.substring(timeString.indexOf(" ") + 1);
+    let day = timeString.substring(0, timeString.indexOf(" "));
+    return { hours, minutes, date, day };
+  }
+
   return (
     <div className="App">
       <Header />
-      <Home forecast={forecast} setLoaded={setLoaded} />
+      <Home
+        forecast={forecast}
+        setLoaded={setLoaded}
+        convertTime={convertTime}
+      />
+      <Hourly forecast={forecast} convertTime={convertTime} />
       {!loaded && <Loader />}
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import "./home.css";
 
-function Home({ forecast, setLoaded }) {
+function Home({ forecast, setLoaded, convertTime }) {
   if (!forecast) {
     return (
       <p>
@@ -10,17 +10,6 @@ function Home({ forecast, setLoaded }) {
       </p>
     );
   } else {
-    console.log(forecast);
-    function convertTime(timestamp) {
-      let time = new Date(timestamp * 1000);
-      let hours = time.getHours();
-      if (hours > 12) {
-        hours = hours - 12;
-      }
-      let minutes = "0" + time.getMinutes();
-      return { hours, minutes };
-    }
-
     let sunriseTime = convertTime(forecast.current.sunrise);
     let sunsetTime = convertTime(forecast.current.sunset);
 
