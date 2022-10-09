@@ -3,10 +3,11 @@ import List from "../List/List";
 
 function Hourly({ forecast, convertTime, setLoaded }) {
   if (forecast) {
+    console.log(forecast);
     setTimeout(setLoaded, 800, true);
     let hourForecastArray = [];
-    for (let i = 6; i >= 1; i--) {
-      hourForecastArray.push(forecast.hourly[forecast["hourly"].length - i]);
+    for (let i = 1; i <= 6; i++) {
+      hourForecastArray.push(forecast.hourly[i]);
     }
     return (
       <ul className="hourlyList">

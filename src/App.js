@@ -57,9 +57,6 @@ function App() {
   function convertTime(timestamp) {
     let time = new Date(timestamp * 1000);
     let hours = time.getHours();
-    if (hours > 12) {
-      hours = hours - 12;
-    }
     let minutes = "0" + time.getMinutes();
     let timeString = time.toDateString();
     let date = timeString.substring(timeString.indexOf(" ") + 1);
