@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import { getForecast } from "./weather.service";
 import Loader from "./components/Loader/Loader";
 import Hourly from "./components/Hourly/Hourly";
+import NavBar from "./components/NavBar/NavBar";
+import FourOhFour from "./components/FourOhFour/FourOhFour";
 
 function App() {
   const [lon, setLon] = useState("");
@@ -67,12 +70,24 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Home
-        forecast={forecast}
-        setLoaded={setLoaded}
-        convertTime={convertTime}
-      />
-      <Hourly forecast={forecast} convertTime={convertTime} />
+      <NavBar />
+      <Routes>
+        <Route
+          path="/home"
+          element={
+            <Home
+              forecast={forecast}
+              setLoaded={setLoaded}
+              convertTime={convertTime}
+            />
+          }
+        />
+        <Route
+          path="/hourly"
+          element={<Hourly forecast={forecast} convertTime={convertTime} />}
+        />
+        <Route path="*" element={<FourOhFour />} />
+      </Routes>
       {!loaded && <Loader />}
     </div>
   );
