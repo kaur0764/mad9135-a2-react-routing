@@ -1,4 +1,25 @@
+.current div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
 .temp{
   font-size: 4rem;
-  margin: 1rem;
+  margin: 0rem;
+  margin-top: 1rem;
 }
+
+.feelsLike{
+  text-align:left;
+  margin-left: -0.5rem;
+}
+
+.homeImg{
+  display: inline-block;
+  height:4rem;
+}
+
+

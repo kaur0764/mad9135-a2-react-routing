@@ -1,4 +1,5 @@
 import React from "react";
+import { createWeatherIcon } from "../../weather.service";
 import "./list.css";
 
 function List({ forecast, convertTime }) {
@@ -17,7 +18,7 @@ function List({ forecast, convertTime }) {
     temp[0] = `Day ${forecast.temp.day}\u00B0 feels like ${forecast.feels_like.day}\u00B0`;
     temp[1] = `Night ${forecast.temp.night}\u00B0 feels like ${forecast.feels_like.night}\u00B0`;
   }
-
+  let img = createWeatherIcon(forecast.weather[0].icon);
   return (
     <li>
       <p>
@@ -29,6 +30,7 @@ function List({ forecast, convertTime }) {
       <p>{temp[0]}</p>
       <p>{temp[1]}</p>
       <p>{forecast.weather[0].description}</p>
+      <img src={img.src} />
     </li>
   );
 }
