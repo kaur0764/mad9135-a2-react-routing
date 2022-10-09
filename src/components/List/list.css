@@ -2,22 +2,21 @@ ul{
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  align-items: stretch;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   padding: 1rem 2rem;
   gap: 1rem;
 }
 
 .hourlyList li{
-  padding-top: 0.5rem;
   margin: 0 auto;
   border: 3px solid #000;
   border-radius: 10px;
   min-width: 21rem;
   max-width: 42rem;
-  margin: 0;
   flex-grow: 1;
+  flex-basis: 0;
 } 
 
 .hourlyList li p:first-child{
@@ -25,6 +24,9 @@ ul{
 }
 
 .hourlyList p{
+  /* width: max-content; */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   margin: 0 auto;
   padding: 0 1rem;
   margin: 1rem 0;

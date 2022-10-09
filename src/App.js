@@ -84,7 +84,13 @@ function App() {
         />
         <Route
           path="/hourly"
-          element={<Hourly forecast={forecast} convertTime={convertTime} />}
+          element={
+            <Hourly
+              forecast={forecast}
+              convertTime={convertTime}
+              setLoaded={setLoaded}
+            />
+          }
         />
         <Route path="*" element={<FourOhFour />} />
       </Routes>

@@ -1,12 +1,15 @@
 .overlay {
   position: fixed;
-  top: 20vh;
+  top: calc(20vh + 4rem);
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: hsl(0, 0%, 12%);
+  background-color: hwb(0 100% 0%);
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* position: relative; */
+}
+
+.DotPulse-module_container__Q1oww{
+position: absolute;
+  top: 30%;
 }

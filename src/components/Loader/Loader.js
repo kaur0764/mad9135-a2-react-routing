@@ -5,7 +5,7 @@ import "./loader.css";
 function Loader() {
   return (
     <div className="overlay">
-      <DotPulse color="white" />
+      <DotPulse color="black" size={50} />
     </div>
   );
 }

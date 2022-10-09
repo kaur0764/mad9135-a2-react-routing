@@ -1,0 +1,10 @@
+#navbar{
+  font-size: 1.3rem;
+  background-color: rgb(216, 215, 215);
+  padding: 1.5rem 2rem;
+}
+
+.navlink{
+  padding: 0.5rem;
+  text-decoration: none;
+}
