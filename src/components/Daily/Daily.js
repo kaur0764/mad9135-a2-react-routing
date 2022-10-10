@@ -8,7 +8,6 @@ function Daily({ forecast, convertTime, setLoaded }) {
     for (let i = 1; i <= 6; i++) {
       dailyForecast.push(forecast.daily[i]);
     }
-    console.log(dailyForecast);
     return (
       <ul className="dailyList">
         {dailyForecast.map((forecast) => (

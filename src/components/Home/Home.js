@@ -11,7 +11,6 @@ function Home({ forecast, setLoaded, convertTime }) {
       </p>
     );
   } else {
-    console.log(forecast);
     let sunriseTime = convertTime(forecast.current.sunrise);
     let sunsetTime = convertTime(forecast.current.sunset);
     convertTime(1665054440);
