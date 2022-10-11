@@ -9,12 +9,25 @@ import Home from "./components/Home/Home";
 import Hourly from "./components/Hourly/Hourly";
 import Daily from "./components/Daily/Daily";
 import FourOhFour from "./components/FourOhFour/FourOhFour";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
   const [lon, setLon] = useState("");
   const [lat, setLat] = useState("");
   const [forecast, setForecast] = useState("");
   const [loaded, setLoaded] = useState(false);
+  const [location, setLocation] = useLocalStorage("ReactRouting", []);
+
+  useEffect(() => {
+    if (!navigator.geolocation) {
+      console.log("Geolocation is not supported by your browser");
+    } else {
+      navigator.geolocation.getCurrentPosition((position) => {
+        setLat(position.coords.latitude);
+        setLon(position.coords.longitude);
+      });
+    }
+  }, []);
 
   useEffect(() => {
     if (lat && lon) {
@@ -32,15 +45,6 @@ function App() {
     });
     setForecast(data);
   };
-
-  if (!navigator.geolocation) {
-    console.log("Geolocation is not supported by your browser");
-  } else {
-    navigator.geolocation.getCurrentPosition((position) => {
-      setLat(position.coords.latitude);
-      setLon(position.coords.longitude);
-    });
-  }
 
   navigator.permissions
     .query({ name: "geolocation" })
@@ -67,8 +71,14 @@ function App() {
 
   return (
     <div className="App">
-      <Header setLat={setLat} setLon={setLon} setLoaded={setLoaded} />
-      <NavBar />
+      <Header
+        setLat={setLat}
+        setLon={setLon}
+        setLoaded={setLoaded}
+        location={location}
+        setLocation={setLocation}
+      />
+      <NavBar location={location} setLat={setLat} setLon={setLon} />
       <Routes>
         <Route
           path="/home"

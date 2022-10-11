@@ -17,7 +17,7 @@ function Home({ forecast, setLoaded, convertTime }) {
     let img = createWeatherIcon(forecast.current.weather[0].icon);
     setTimeout(setLoaded, 800, true);
     return (
-      <div className="current">
+      <div className="current show">
         <div>
           <p className="temp">{`${forecast.current.temp}\u00B0`}</p>
           <p className="feelsLike">

@@ -1,6 +1,6 @@
 .overlay {
   position: fixed;
-  top: calc(20vh + 4rem);
+  top: calc(20vh + 7.9rem);
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -12,4 +12,10 @@
 .DotPulse-module_container__Q1oww{
 position: absolute;
   top: 30%;
+}
+
+@media all and (min-width: 680px) {
+  .overlay {
+    top: calc(20vh + 5.1rem);
+  }
 }

@@ -1,9 +1,7 @@
 import React from "react";
 import { getGeolocation } from "../../map.service";
-import useLocalStorage from "../../hooks/useLocalStorage";
 
-function Form({ setLat, setLon, setLoaded }) {
-  const [location, setLocation] = useLocalStorage("ReactRouting", []);
+function Form({ setLat, setLon, setLoaded, location, setLocation }) {
   async function handleSubmit(ev) {
     ev.preventDefault();
     setLoaded(false);
