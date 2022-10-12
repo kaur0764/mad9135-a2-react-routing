@@ -4,13 +4,6 @@ import "./navbar.css";
 import PreviousSearches from "../PreviousSearches/PreviousSearches";
 
 function NavBar({ location, setLat, setLon, setLoaded }) {
-  if (location.length) {
-    let span = document.querySelector("p span");
-    if (span) {
-      span.classList.remove("showSpan");
-    }
-  }
-
   function handleClick() {
     setLoaded(false);
   }

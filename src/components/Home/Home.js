@@ -47,9 +47,15 @@ function Home({ forecast, setLoaded, convertTime, address }) {
           <img className="homeImg" src={img.src} />
           <p>{forecast.current.weather[0].main}</p>
         </div>
-        <div>
-          <p>Wind {forecast.current.wind_speed}m/s</p>
-          <p> Humidity {forecast.current.humidity}%</p>
+        <div className="iconsDiv">
+          <p>
+            <i className="material-icons">&#xefd8;</i>{" "}
+            {forecast.current.wind_speed}m/s
+          </p>
+          <p>
+            <i className="material-icons">&#xe798;</i>{" "}
+            {forecast.current.humidity}%
+          </p>
         </div>
         <div>
           <p>

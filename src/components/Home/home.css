@@ -23,6 +23,10 @@
   margin-left: -0.5rem;
 }
 
+.iconsDiv p{
+  display: flex;
+}
+
 .homeImg{
   display: inline-block;
   height:4rem;

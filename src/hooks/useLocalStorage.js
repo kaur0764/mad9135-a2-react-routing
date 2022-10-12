@@ -7,6 +7,12 @@ export default function useLocalStorage(key, initialState) {
   });
 
   useEffect(() => {
+    if (location.length) {
+      let span = document.querySelector("p span");
+      if (span) {
+        span.classList.remove("showSpan");
+      }
+    }
     localStorage.setItem(key, JSON.stringify(location));
   }, [key, location]);
 
