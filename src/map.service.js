@@ -11,3 +11,13 @@ export async function getGeolocation(location) {
   const data = await response.json();
   return { lat: data[0].lat, lon: data[0].lon };
 }
+
+export async function getReverseGeolocation(lat, long) {
+  const url = `${BASE_URL}/reverse?key=${API_TOKEN}&lat=${lat}&lon=${long}&format=json`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+  const data = await response.json();
+  return data.address;
+}

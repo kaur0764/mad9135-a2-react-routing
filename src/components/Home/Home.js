@@ -2,7 +2,7 @@ import React from "react";
 import { createWeatherIcon } from "../../weather.service";
 import "./home.css";
 
-function Home({ forecast, setLoaded, convertTime }) {
+function Home({ forecast, setLoaded, convertTime, address }) {
   if (!forecast) {
     return (
       <p>
@@ -18,12 +18,20 @@ function Home({ forecast, setLoaded, convertTime }) {
     setTimeout(setLoaded, 800, true);
     return (
       <div className="current show">
+        <p className="address">
+          <i className="material-icons">&#xe0c8;</i>
+          {address.state}, {address["country_code"].toUpperCase()}
+        </p>
         <div>
-          <p className="temp">{`${forecast.current.temp}\u00B0`}</p>
+          <p className="temp">
+            {forecast.current.temp}
+            {`\u00B0`}
+          </p>
           <p className="feelsLike">
             Feels like
             <br />
-            {`${forecast.current.feels_like}\u00B0`}
+            {forecast.current.feels_like}
+            {`\u00B0`}
           </p>
         </div>
         <div>

@@ -10,6 +10,7 @@ import Hourly from "./components/Hourly/Hourly";
 import Daily from "./components/Daily/Daily";
 import FourOhFour from "./components/FourOhFour/FourOhFour";
 import useLocalStorage from "./hooks/useLocalStorage";
+import { getReverseGeolocation } from "./map.service";
 
 function App() {
   const [lon, setLon] = useState("");
@@ -17,6 +18,7 @@ function App() {
   const [forecast, setForecast] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [location, setLocation] = useLocalStorage("ReactRouting", []);
+  const [address, setAddress] = useState("");
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -32,6 +34,7 @@ function App() {
   useEffect(() => {
     if (lat && lon) {
       getData();
+      getAddress();
     }
   }, [lon, lat]);
 
@@ -44,6 +47,11 @@ function App() {
       units: "metric",
     });
     setForecast(data);
+  };
+
+  const getAddress = async () => {
+    let data = await getReverseGeolocation(lat, lon);
+    setAddress(data);
   };
 
   navigator.permissions
@@ -87,6 +95,7 @@ function App() {
               forecast={forecast}
               setLoaded={setLoaded}
               convertTime={convertTime}
+              address={address}
             />
           }
         />

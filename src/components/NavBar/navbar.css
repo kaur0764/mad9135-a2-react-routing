@@ -2,6 +2,14 @@
   font-size: 1.3rem;
   background-color: rgb(216, 215, 215);
   padding: 1rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navlinks{
+  flex-grow: 1;
 }
 
 .navlink{
@@ -35,13 +43,4 @@ aside button:focus,
 aside button:hover {
   background-color: #fff;
   color: #282c34;;
-}
-
-@media all and (min-width: 680px) {
-  #navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
 }
