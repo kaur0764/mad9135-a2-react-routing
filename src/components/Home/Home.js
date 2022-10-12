@@ -16,7 +16,6 @@ function Home({ forecast, setLoaded, convertTime, address }) {
     convertTime(1665054440);
     let img = createWeatherIcon(forecast.current.weather[0].icon);
     setTimeout(setLoaded, 3000, true);
-    console.log(address);
     let state = "";
     let country = "";
     if (address.state) {
