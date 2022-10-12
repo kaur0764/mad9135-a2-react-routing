@@ -15,15 +15,22 @@ function Home({ forecast, setLoaded, convertTime, address }) {
     let sunsetTime = convertTime(forecast.current.sunset);
     convertTime(1665054440);
     let img = createWeatherIcon(forecast.current.weather[0].icon);
-    setTimeout(setLoaded, 800, true);
+    setTimeout(setLoaded, 3000, true);
+    console.log(address);
+    let state = "";
+    let country = "";
+    if (address.state) {
+      state = `${address.state}, `;
+    }
     if (address["country_code"]) {
-      address["country_code"] = address["country_code"].toUpperCase();
+      country = address["country_code"].toUpperCase();
     }
     return (
       <div className="current show">
         <p className="address">
           <i className="material-icons">&#xe0c8;</i>
-          {address.state}, {address["country_code"]}
+          {state}
+          {country}
         </p>
         <div>
           <p className="temp">

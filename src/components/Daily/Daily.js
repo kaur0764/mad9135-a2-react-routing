@@ -3,7 +3,7 @@ import List from "../List/List";
 
 function Daily({ forecast, convertTime, setLoaded }) {
   if (forecast) {
-    setTimeout(setLoaded, 800, true);
+    setTimeout(setLoaded, 3000, true);
     let dailyForecast = [];
     for (let i = 1; i <= 6; i++) {
       dailyForecast.push(forecast.daily[i]);

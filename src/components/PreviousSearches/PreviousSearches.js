@@ -1,8 +1,9 @@
 import React from "react";
 import { getGeolocation } from "../../map.service";
 
-function PreviousSearches({ item, setLat, setLon }) {
+function PreviousSearches({ item, setLat, setLon, setLoaded }) {
   async function handleSearchClick(ev) {
+    setLoaded(false);
     ev.preventDefault(ev);
     let data = await getGeolocation(ev.target.textContent);
     setLat(data.lat);

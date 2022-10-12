@@ -3,19 +3,25 @@ import { NavLink } from "react-router-dom";
 import "./navbar.css";
 import PreviousSearches from "../PreviousSearches/PreviousSearches";
 
-function NavBar({ location, setLat, setLon }) {
+function NavBar({ location, setLat, setLon, setLoaded }) {
   if (location.length) {
     let span = document.querySelector("p span");
     if (span) {
       span.classList.remove("showSpan");
     }
   }
+
+  function handleClick() {
+    setLoaded(false);
+  }
+
   return (
     <div id="navbar">
       <div className="navlinks">
         <NavLink
           to="/home"
           className="navlink"
+          onClick={handleClick}
           style={({ isActive }) => ({ color: isActive ? "purple" : "black" })}
         >
           Home
@@ -23,6 +29,7 @@ function NavBar({ location, setLat, setLon }) {
         <NavLink
           to="/hourly"
           className="navlink"
+          onClick={handleClick}
           style={({ isActive }) => ({ color: isActive ? "purple" : "black" })}
         >
           Hourly
@@ -30,6 +37,7 @@ function NavBar({ location, setLat, setLon }) {
         <NavLink
           to="/daily"
           className="navlink"
+          onClick={handleClick}
           style={({ isActive }) => ({ color: isActive ? "purple" : "black" })}
         >
           Daily
@@ -45,6 +53,7 @@ function NavBar({ location, setLat, setLon }) {
             item={item}
             setLat={setLat}
             setLon={setLon}
+            setLoaded={setLoaded}
           />
         ))}
       </aside>

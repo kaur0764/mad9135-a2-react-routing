@@ -62,7 +62,7 @@ function App() {
       }
       permissionStatus.onchange = () => {
         if (permissionStatus.state === "denied") {
-          setTimeout(setLoaded, 800, true);
+          setTimeout(setLoaded, 800, false);
         }
       };
     });
@@ -86,7 +86,12 @@ function App() {
         location={location}
         setLocation={setLocation}
       />
-      <NavBar location={location} setLat={setLat} setLon={setLon} />
+      <NavBar
+        location={location}
+        setLat={setLat}
+        setLon={setLon}
+        setLoaded={setLoaded}
+      />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route
