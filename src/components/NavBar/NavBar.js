@@ -4,9 +4,11 @@ import "./navbar.css";
 import PreviousSearches from "../PreviousSearches/PreviousSearches";
 
 function NavBar({ location, setLat, setLon }) {
-  let locationArray = [];
-  if (location) {
-    locationArray = location;
+  if (location.length) {
+    let span = document.querySelector("p span");
+    if (span) {
+      span.classList.remove("showSpan");
+    }
   }
   return (
     <div id="navbar">
@@ -34,8 +36,10 @@ function NavBar({ location, setLat, setLon }) {
         </NavLink>
       </div>
       <aside>
-        <p>Previous Searches:</p>
-        {locationArray.map((item) => (
+        <p>
+          Previous Searches: <span className="showSpan">None </span>
+        </p>
+        {location.map((item) => (
           <PreviousSearches
             key={item}
             item={item}

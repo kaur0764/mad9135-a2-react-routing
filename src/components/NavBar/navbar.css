@@ -6,12 +6,11 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
+} 
 
 .navlinks{
   flex-grow: 1;
 }
-
 .navlink{
   padding: 0.5rem;
   text-decoration: none;
@@ -19,14 +18,23 @@
 
 aside {
   display: flex;
-  justify-content: center;
+  justify-content: center ;
   align-items: center;
   gap: 1rem;
+  flex-grow: 1;
 }
 
 aside p{
   font-size: 1rem;
   flex-shrink: 1;
+}
+
+aside p span{
+  display: none;
+}
+
+aside p span.showSpan{
+  display: inline;
 }
 
 aside button {

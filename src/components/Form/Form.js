@@ -8,10 +8,16 @@ function Form({ setLat, setLon, setLoaded, location, setLocation }) {
     let data = await getGeolocation(ev.target[0].value);
     setLat(data.lat);
     setLon(data.lon);
-    if (location.length >= 2) {
-      setLocation(location.splice(-2).concat(ev.target[0].value));
-    } else {
-      setLocation(location.concat(ev.target[0].value));
+    const newLocationLowered = ev.target[0].value.toLowerCase();
+    const newLocation =
+      newLocationLowered.charAt(0).toUpperCase() +
+      newLocationLowered.substring(1);
+    if (!location.includes(newLocation)) {
+      if (location.length >= 2) {
+        setLocation(location.splice(-2).concat(newLocation));
+      } else {
+        setLocation(location.concat(newLocation));
+      }
     }
   }
   return (
