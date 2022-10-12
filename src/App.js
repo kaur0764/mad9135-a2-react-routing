@@ -62,7 +62,7 @@ function App() {
       }
       permissionStatus.onchange = () => {
         if (permissionStatus.state === "denied") {
-          setTimeout(setLoaded, 800, false);
+          setTimeout(setLoaded, 800, true);
         }
       };
     });

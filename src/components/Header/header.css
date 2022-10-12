@@ -11,25 +11,6 @@
   position: relative;
 }
 
-input{
-  font-size: 1rem;
-  line-height: 1;
-  padding: 0.25rem 0.5rem;
-  font-weight: 300;
-  border: 1px solid #fff;
-  border-radius: 8px 0px 0px 8px ;
-}
-
-form button{
-  font-size: 1rem;
-  line-height: 1;
-  padding: 0.25rem 0.5rem;
-  font-weight: 300;
-  height: 1.781rem;
-  border: 1px solid #fff;
-  border-radius: 0px 8px 8px 0px;
-}
-
 .App-header aside p{
   font-size: 1rem;
 }

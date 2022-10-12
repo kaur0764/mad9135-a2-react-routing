@@ -4,7 +4,7 @@ import "./header.css";
 function Header({ setLat, setLon, setLoaded, location, setLocation }) {
   return (
     <header className="App-header">
-      <p>React Router</p>
+      <p>Weather App</p>
       <Form
         setLat={setLat}
         setLon={setLon}

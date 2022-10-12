@@ -1,14 +1,18 @@
 import React from "react";
 import { getGeolocation } from "../../map.service";
+import "./form.css";
 
 function Form({ setLat, setLon, setLoaded, location, setLocation }) {
   async function handleSubmit(ev) {
     ev.preventDefault();
+    const value = ev.target[0].value;
+    let form = document.querySelector("#searchForm");
+    form.reset();
     setLoaded(false);
-    let data = await getGeolocation(ev.target[0].value);
+    let data = await getGeolocation(value);
     setLat(data.lat);
     setLon(data.lon);
-    const newLocationLowered = ev.target[0].value.toLowerCase();
+    const newLocationLowered = value.toLowerCase();
     const newLocation =
       newLocationLowered.charAt(0).toUpperCase() +
       newLocationLowered.substring(1);
@@ -21,7 +25,7 @@ function Form({ setLat, setLon, setLoaded, location, setLocation }) {
     }
   }
   return (
-    <form className="App" onSubmit={handleSubmit}>
+    <form id="searchForm" className="App" onSubmit={handleSubmit}>
       <input type="text" required />
       <button type="submit">Search</button>
     </form>
