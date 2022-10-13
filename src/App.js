@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { getForecast } from "./weather.service";
 import "./App.css";
 import Loader from "./components/Loader/Loader";
@@ -93,9 +93,8 @@ function App() {
         setLoaded={setLoaded}
       />
       <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
         <Route
-          path="/home"
+          path="/"
           element={
             <Home
               forecast={forecast}
