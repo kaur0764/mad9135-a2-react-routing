@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { getForecast } from "./services/weather.service";
 import "./App.css";
 import Loader from "./components/Loader/Loader";
@@ -71,6 +71,7 @@ function App() {
     let time = new Date(timestamp * 1000);
     let hours = time.getHours();
     let minutes = "0" + time.getMinutes();
+    minutes = minutes.substring(minutes.length - 2);
     let timeString = time.toDateString();
     let date = timeString.substring(timeString.indexOf(" ") + 1);
     let day = timeString.substring(0, timeString.indexOf(" "));
@@ -93,8 +94,9 @@ function App() {
         setLoaded={setLoaded}
       />
       <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
         <Route
-          path="/"
+          path="/home"
           element={
             <Home
               forecast={forecast}

@@ -12,7 +12,7 @@ function NavBar({ location, setLat, setLon, setLoaded }) {
     <div id="navbar">
       <div className="navlinks">
         <NavLink
-          to="/"
+          to="/home"
           className="navlink"
           onClick={handleClick}
           style={({ isActive }) => ({ color: isActive ? "purple" : "black" })}
