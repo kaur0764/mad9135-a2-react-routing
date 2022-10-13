@@ -1,5 +1,5 @@
 import React from "react";
-import { getGeolocation } from "../../map.service";
+import { getGeolocation } from "../../services/map.service";
 import "./form.css";
 
 function Form({ setLat, setLon, setLoaded, location, setLocation }) {

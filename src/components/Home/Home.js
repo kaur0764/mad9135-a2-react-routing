@@ -1,5 +1,5 @@
 import React from "react";
-import { createWeatherIcon } from "../../weather.service";
+import { createWeatherIcon } from "../../services/weather.service";
 import "./home.css";
 
 function Home({ forecast, setLoaded, convertTime, address }) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { getForecast } from "./weather.service";
+import { getForecast } from "./services/weather.service";
 import "./App.css";
 import Loader from "./components/Loader/Loader";
 import Header from "./components/Header/Header";
@@ -10,7 +10,7 @@ import Hourly from "./components/Hourly/Hourly";
 import Daily from "./components/Daily/Daily";
 import FourOhFour from "./components/FourOhFour/FourOhFour";
 import useLocalStorage from "./hooks/useLocalStorage";
-import { getReverseGeolocation } from "./map.service";
+import { getReverseGeolocation } from "./services/map.service";
 
 function App() {
   const [lon, setLon] = useState("");

@@ -1,5 +1,5 @@
 import React from "react";
-import { getGeolocation } from "../../map.service";
+import { getGeolocation } from "../../services/map.service";
 
 function PreviousSearches({ item, setLat, setLon, setLoaded }) {
   async function handleSearchClick(ev) {
