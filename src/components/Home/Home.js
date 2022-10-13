@@ -49,11 +49,11 @@ function Home({ forecast, setLoaded, convertTime, address }) {
         </div>
         <div className="iconsDiv">
           <p>
-            <i className="material-icons">&#xefd8;</i>{" "}
+            <i className="material-icons wind">&#xefd8;</i>{" "}
             {forecast.current.wind_speed}m/s
           </p>
           <p>
-            <i className="material-icons">&#xe798;</i>{" "}
+            <i className="material-icons humidity">&#xe798;</i>{" "}
             {forecast.current.humidity}%
           </p>
         </div>

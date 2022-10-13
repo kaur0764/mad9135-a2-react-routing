@@ -31,6 +31,11 @@
 font-size: 2rem;
 }
 
+.current .wind,
+.current .humidity{
+  color: rgb(108, 172, 228);
+}
+
 svg{
   font-size: 1rem;
 }
