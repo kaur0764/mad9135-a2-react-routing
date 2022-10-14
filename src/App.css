@@ -25,3 +25,22 @@
     transform: rotate(360deg);
   }
 }
+
+.currentLocationButton{
+  position: fixed;
+  width:3.2rem;
+  height: 3.2rem;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  background-color: #282c34;
+  color: #fff;
+  border: 5px solid #282c34;;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 10000;
+}
+
+.currentLocationButton i{
+  font-size: 1.8rem;
+}

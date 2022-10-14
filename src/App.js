@@ -19,6 +19,7 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const [location, setLocation] = useLocalStorage("ReactRouting", []);
   const [address, setAddress] = useState("");
+  let [currentPosition, setCurrentPosition] = useState({});
 
   useEffect(() => {
     if (!navigator.geolocation) {
@@ -27,6 +28,10 @@ function App() {
       navigator.geolocation.getCurrentPosition((position) => {
         setLat(position.coords.latitude);
         setLon(position.coords.longitude);
+        setCurrentPosition({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
+        });
       });
     }
   }, []);
@@ -76,6 +81,12 @@ function App() {
     let date = timeString.substring(timeString.indexOf(" ") + 1);
     let day = timeString.substring(0, timeString.indexOf(" "));
     return { hours, minutes, date, day };
+  }
+
+  function handleCurrentButton() {
+    setLoaded(false);
+    setLat(currentPosition.lat);
+    setLon(currentPosition.lon);
   }
 
   return (
@@ -128,6 +139,9 @@ function App() {
         />
         <Route path="*" element={<FourOhFour />} />
       </Routes>
+      <button className="currentLocationButton" onClick={handleCurrentButton}>
+        <i className="material-icons humidity">&#xe55c;</i>
+      </button>
       {!loaded && <Loader />}
     </div>
   );

@@ -8,6 +8,10 @@ function Home({ forecast, setLoaded, convertTime, address }) {
       <div className="welcomeMsg">
         <p>Welcome!</p>
         <p>Please enter the name of the location to get weather information</p>
+        <p>
+          To get weather information about your current location please enable
+          location
+        </p>
       </div>
     );
   } else {
