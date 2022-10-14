@@ -137,7 +137,7 @@ function App() {
             />
           }
         />
-        <Route path="*" element={<FourOhFour />} />
+        <Route path="*" element={<FourOhFour setLoaded={setLoaded} />} />
       </Routes>
       <button className="currentLocationButton" onClick={handleCurrentButton}>
         <i className="material-icons humidity">&#xe55c;</i>

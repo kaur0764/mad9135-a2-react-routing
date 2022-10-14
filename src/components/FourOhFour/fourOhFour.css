@@ -1,0 +1,17 @@
+.fourOhFourPage{
+  color: rgb(73, 73, 73);
+}
+
+.fourOhFourPage .material-icons{
+  margin-top: 2rem;
+  font-size: 8rem;
+}
+
+.fourOhFourPage h1{
+  font-size: 4rem;
+  margin: 0rem;
+}
+
+.fourOhFourPage p{
+  font-size: 2rem;
+}
