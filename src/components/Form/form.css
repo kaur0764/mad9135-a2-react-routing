@@ -19,4 +19,11 @@ form button {
   height: 1.781rem;
   border: 1px solid #efefef;
   border-radius: 0px 8px 8px 0px;
+  background-color: #acb9d4;
+}
+
+form button:focus,
+form button:hover{
+  color: #fff;
+  background-color: #acb9d4c0;;
 }

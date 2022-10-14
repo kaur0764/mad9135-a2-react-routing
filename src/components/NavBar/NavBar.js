@@ -15,7 +15,9 @@ function NavBar({ location, setLat, setLon, setLoaded }) {
           to="/home"
           className="navlink"
           onClick={handleClick}
-          style={({ isActive }) => ({ color: isActive ? "purple" : "black" })}
+          style={({ isActive }) => ({
+            color: isActive ? "#3D4CB6" : "#282c34",
+          })}
         >
           Home
         </NavLink>
@@ -23,7 +25,9 @@ function NavBar({ location, setLat, setLon, setLoaded }) {
           to="/hourly"
           className="navlink"
           onClick={handleClick}
-          style={({ isActive }) => ({ color: isActive ? "purple" : "black" })}
+          style={({ isActive }) => ({
+            color: isActive ? "#3D4CB6" : "#282c34",
+          })}
         >
           Hourly
         </NavLink>
@@ -31,7 +35,9 @@ function NavBar({ location, setLat, setLon, setLoaded }) {
           to="/daily"
           className="navlink"
           onClick={handleClick}
-          style={({ isActive }) => ({ color: isActive ? "purple" : "black" })}
+          style={({ isActive }) => ({
+            color: isActive ? "#3D4CB6" : "#282c34",
+          })}
         >
           Daily
         </NavLink>

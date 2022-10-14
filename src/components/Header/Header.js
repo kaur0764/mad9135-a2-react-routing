@@ -4,7 +4,7 @@ import "./header.css";
 function Header({ setLat, setLon, setLoaded, location, setLocation }) {
   return (
     <header className="App-header">
-      <p>Weather App</p>
+      <h1>Weather App</h1>
       <Form
         setLat={setLat}
         setLon={setLon}

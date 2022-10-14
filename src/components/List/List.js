@@ -19,6 +19,7 @@ function List({ forecast, convertTime }) {
     temp[1] = `Night ${forecast.temp.night}\u00B0 feels like ${forecast.feels_like.night}\u00B0`;
   }
   let img = createWeatherIcon(forecast.weather[0].icon);
+  console.log(img);
   return (
     <li>
       <p>
@@ -30,7 +31,7 @@ function List({ forecast, convertTime }) {
       <p>{temp[0]}</p>
       <p>{temp[1]}</p>
       <p>{forecast.weather[0].description}</p>
-      <img src={img.src} />
+      <img src={img.src} alt="wether-icon" />
     </li>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import List from "../List/List";
+import "./daily.css";
 
 function Daily({ forecast, convertTime, setLoaded }) {
   if (forecast) {
@@ -18,6 +19,12 @@ function Daily({ forecast, convertTime, setLoaded }) {
           />
         ))}
       </ul>
+    );
+  } else {
+    return (
+      <p className="paraDaily">
+        Please enter the name of the location to get weather information
+      </p>
     );
   }
 }

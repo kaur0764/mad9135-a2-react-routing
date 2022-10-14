@@ -5,10 +5,10 @@ import "./home.css";
 function Home({ forecast, setLoaded, convertTime, address }) {
   if (!forecast) {
     return (
-      <p>
-        Welcome! Please enter the name of the location to get weather
-        information
-      </p>
+      <div className="welcomeMsg">
+        <p>Welcome!</p>
+        <p>Please enter the name of the location to get weather information</p>
+      </div>
     );
   } else {
     let sunriseTime = convertTime(forecast.current.sunrise);
@@ -44,7 +44,7 @@ function Home({ forecast, setLoaded, convertTime, address }) {
           </p>
         </div>
         <div>
-          <img className="homeImg" src={img.src} />
+          <img className="homeImg" src={img.src} alt="current weather icon" />
           <p>{forecast.current.weather[0].main}</p>
         </div>
         <div className="iconsDiv">

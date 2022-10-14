@@ -1,13 +1,13 @@
 #navbar{
   font-size: 1.3rem;
-  background-color: rgb(216, 215, 215);
+  background-color: #d1daef;
   padding: 1rem 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   z-index: 100000;
-    position: relative;
+  position: relative;
 } 
 
 .navlinks{

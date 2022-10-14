@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.App-header h1{
+  font-size: calc(10px + 2vmin);
+}
+
 .App-header aside p{
   font-size: 1rem;
 }
