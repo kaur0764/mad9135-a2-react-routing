@@ -6,9 +6,14 @@ function List({ forecast, convertTime }) {
   let time = convertTime(forecast.dt);
   const formatedDate = new Date(forecast.dt * 1000);
   let timeSuffix = "am";
-  if (time.hours > 12) {
+  if (time.hours == 12) {
+    timeSuffix = "pm";
+  } else if (time.hours > 12) {
     time.hours = time.hours - 12;
     timeSuffix = "pm";
+  }
+  if (time.hours == 0) {
+    time.hours = 12;
   }
   let temp = [];
   if (typeof forecast.temp == "number") {
