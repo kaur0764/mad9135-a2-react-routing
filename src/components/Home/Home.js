@@ -20,8 +20,12 @@ function Home({ forecast, setLoaded, convertTime, address }) {
     convertTime(1665054440);
     let img = createWeatherIcon(forecast.current.weather[0].icon);
     setTimeout(setLoaded, 3000, true);
+    let city = "";
     let state = "";
     let country = "";
+    if (address.city) {
+      city = `${address.city}, `;
+    }
     if (address.state) {
       state = `${address.state}, `;
     }
@@ -32,6 +36,7 @@ function Home({ forecast, setLoaded, convertTime, address }) {
       <div className="current show">
         <p className="address">
           <i className="material-icons">&#xe0c8;</i>
+          {city}
           {state}
           {country}
         </p>
