@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mad9135-a2-react-routing/static/css/main.b2664487.css",
-    "main.js": "/mad9135-a2-react-routing/static/js/main.0e595a21.js",
+    "main.css": "/mad9135-a2-react-routing/static/css/main.4a75a3a8.css",
+    "main.js": "/mad9135-a2-react-routing/static/js/main.29134313.js",
     "static/js/787.8b1b0450.chunk.js": "/mad9135-a2-react-routing/static/js/787.8b1b0450.chunk.js",
     "index.html": "/mad9135-a2-react-routing/index.html",
-    "main.b2664487.css.map": "/mad9135-a2-react-routing/static/css/main.b2664487.css.map",
-    "main.0e595a21.js.map": "/mad9135-a2-react-routing/static/js/main.0e595a21.js.map",
+    "main.4a75a3a8.css.map": "/mad9135-a2-react-routing/static/css/main.4a75a3a8.css.map",
+    "main.29134313.js.map": "/mad9135-a2-react-routing/static/js/main.29134313.js.map",
     "787.8b1b0450.chunk.js.map": "/mad9135-a2-react-routing/static/js/787.8b1b0450.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b2664487.css",
-    "static/js/main.0e595a21.js"
+    "static/css/main.4a75a3a8.css",
+    "static/js/main.29134313.js"
   ]
 }
