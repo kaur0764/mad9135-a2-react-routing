@@ -27,3 +27,8 @@ form button:hover{
   color: #fff;
   background-color: #acb9d4c0;;
 }
+
+.screen-reader-text {
+  position: absolute;
+  clip-path: polygon(0 0, 0.1% 0, 0.1% 0.1%, 0.1% 0);
+}

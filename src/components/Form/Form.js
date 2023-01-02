@@ -26,7 +26,10 @@ function Form({ setLat, setLon, setLoaded, location, setLocation }) {
   }
   return (
     <form id="searchForm" className="App" onSubmit={handleSubmit}>
-      <input type="text" required />
+      <label class="screen-reader-text" for="search">
+        Search
+      </label>
+      <input type="text" id="search" name="search" required />
       <button type="submit">Search</button>
     </form>
   );
